@@ -1,0 +1,23 @@
+
+
+#end-summe{
+    margin-right:6rem ;
+    line-height: 2rem;
+    width: 25rem;
+    text-align: end;
+
+
+}
+
+.rest:hover{
+    color:#BB2D3B;
+}
+
+#process{
+    display: none;
+    color: #BB2D3B;
+}
+
+#einkommen-2::after{
+    content: ' €';
+}
