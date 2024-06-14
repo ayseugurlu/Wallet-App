@@ -9,7 +9,7 @@ console.log(ausgabenFormular);
 
 
 
-//^ Events
+//^ Ausgabenformular
 
 ausgabenFormular.addEventListener("submit", (e) => {
   e.preventDefault();
