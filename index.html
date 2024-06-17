@@ -1,134 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Wallet App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  <body>
+  <body class="bg-success-subtle">
+    <h1 class="text-center p-3 text-secondary">My Wallet 💳</h1>
 
-    <h1 class="text-center p-3 text-secondary">My Wallet 💳 </h1>
+    <!-- Ausgaben Formular -->
 
     <div class="container mb-5">
-      
-    <form id="ausgaben-input-container" class="row g-3  p-3 border rounded-5">
+      <form id="ausgaben-input-container" class="row g-3 p-3 border rounded-5">
         <h2 class="text-center mb-3 text-warning">Ausgabenformular</h2>
         <div class="col-md-6">
-          <label for="input-date" class="form-label fw-bold text-info">Datum</label>
-          <input type="date" class="form-control" id="input-date">
+          <label for="input-date" class="form-label fw-bold text-info"
+            >Datum</label
+          >
+          <input type="date" class="form-control" id="input-date" />
         </div>
         <div class="col-md-6">
-          <label for="input-spent" class="form-label fw-bold text-info">Betrag der Ausgaben</label>
-          <input type="number" class="form-control" id="input-spent">
+          <label for="input-spent" class="form-label fw-bold text-info"
+            >Betrag der Ausgaben</label
+          >
+          <input type="number" class="form-control" id="input-spent" />
         </div>
         <div class="col-12">
-          <label for="input-spent-area" class="form-label fw-bold text-info">Ausgabebereich</label>
-          <input type="text" class="form-control" id="input-spent-area" placeholder="Miete, Rechnung, Kredit Karte">
+          <label for="input-spent-area" class="form-label fw-bold text-info"
+            >Ausgabebereich</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="input-spent-area"
+            placeholder="Miete, Rechnung, Kredit Karte"
+          />
         </div>
-       
-        
-        <div class="col-12 text-center ">
+
+        <div class="col-12 text-center">
           <button type="submit" class="btn btn-danger fs-4">Speichern</button>
         </div>
       </form>
-
     </div>
 
-    <div id="einkommen" class="container mb-5 ">
+    <!-- Einkommen Hinzufügen -->
 
-      <form class="row g-3 rounded-5 ">
-        
-        <div class="col-10 w-75 ">
-          
-          <input type="number" class="form-control w-100" id="input-salary" placeholder="Geben Sie Ihr Einkommen">
+    <div  class="container mb-5">
+      <form id="einkommen-1" class="row g-3 rounded-5">
+        <div class="col-10 w-75">
+          <input
+            type="number"
+            class="form-control w-100"
+            id="input-salary"
+            placeholder="Geben Sie Ihr Einkommen"
+          />
         </div>
         <div class="col-2">
-          <button type="submit" class="btn btn-success mb-3 ">Hinzufügen</button>
+          <button type="submit" class="btn btn-success mb-3">Hinzufügen</button>
         </div>
       </form>
     </div>
 
-      <div  class="container text-center  mb-5">
-        <div class="row row-cols-4 border rounded ">
-          <div class="col border fw-bold">Datum</div>
-          <div class="col border fw-bold">Ausgaben Bereich</div>
-          <div class="col border fw-bold">Menge (€)</div>
-          <div class="col border fw-bold">Bearbeiten</div>
-        </div>
+    <!-- Ausgaben Table -->
 
-        <div id="ausgaben-table" class="row row-cols-4 border rounded">
-          <div id="save-date" class="col border border-dark-subtle bg-secondary-subtle"></div>
-          <div id="save-spent-area" class="col border border-dark-subtle  bg-secondary-subtle"></div>
-          <div id="save-spent" class="col border border-dark-subtle  bg-secondary-subtle"></div>
-          <div id="process" class="col border border-dark-subtle  bg-secondary-subtle "><i class="fa-solid fa-trash-can"></i></div>
-        </div>
-      </div>
+    <div class="container">
 
+    <table
+      id="ausgaben-table"
+      class="table table-bordered table-hover table-striped mt-4 text-center"
+    >
+      <thead>
+        <tr>
+          <th scope="col" class="w-25">Datum</th>
+          <th scope="col" class="w-50">Ausgaben Bereich</th>
+          <th scope="col">Menge (€)</th>
+          <th scope="col">Bearbeiten</th>
+        </tr>
+      </thead>
+      <tbody id="ausgaben-body">
+        <!-- <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr> -->
+      </tbody>
+    </table>
 
-      <div id="end-summe" class="container mb-5  "> 
-        
-        <div class="row border  bg-secondary-subtle">
-            <div  class="col  border border-secondary-subtle fw-bold">Einkommen (€)</div>
-            <div id="einkommen-2" class="col border"></div>
-        </div>
-        <div class="row border">
-            <div class="col border border-secondary-subtle fw-bold ">Ausgaben (€)</div>
-            <div id="ausgaben" class="col border"></div>
-        </div>
-        <div class="row border bg-secondary-subtle">
-            <div class="rest col border border-secondary-subtle fw-bold">Resteinkommen (€)</div>
-            <div id="resteinkommen" class="col border"></div>
-        </div>
+  </div>
 
-    
-    </div>
+    <!-- Summe  -->
+     
+<div class="container">
+    <table
+    id="ent-summe"
+    class="table table-bordered table-hover table-striped mt-5 text-center w-50 ms-auto"
+  >
+    <tbody class="text-end">
+      <tr>
+        <th>Einkommen (€) :</th>
+        <td id="einkommen-2" style="width: 100px;">0</td>
+      </tr>
+      <tr>
+        <th>Ausgaben (€) :</th>
+        <td id="ausgaben">0</td>
+      </tr>
+      <tr>
+        <th id="resteinkommen">Resteinkommen (€) :</th>
+        <td id="rest">0</td>
+      </tr>
+    </tbody>
+  </table>
 
-    
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <section class="text-center mt-5 mb-5">
+    <button id="delete-all-btn" class="btn btn-secondary">
+      Alle Löschen
+    </button>
+  </section>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="app.js"></script>
   </body>
